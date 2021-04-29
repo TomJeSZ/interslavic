@@ -10,3 +10,6 @@ Tool for interslavic communication
 Х. кир.: б в г д ꙉ ж з (ꙁ ꙃ) ѕ (ꙅ) к л м н п р с т ф х ц (ꙡ) ч ш щ ѳ ѯ ѱ
 
 Р. кир.: б в г д ж з й к л м н п р с т ф (ѳ) х ц ч ш щ
+
+https://www.typotheque.com/
+https://www.typotheque.com/fonts/identitet
