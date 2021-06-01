@@ -1,6 +1,6 @@
 /**
 Prototypowa aplikacja do zamiany liter 
-2021 (c) Fasada Open Software PL
+2021 (c) Fasada Open Software Group PL
 */
 
 
@@ -16,24 +16,34 @@ import g4p_controls.*;
 //}
 
  
-GTextArea txaArea;
+GTextArea txaArea,txbArea;
 
 public void setup(){
-  size(640, 480);//, P2D);
-  surface.setTitle("Paste-copy clipboard example");
-  txaArea = new GTextArea(this, 5, 5, 640,480, 
+  println("=======================================================");
+  println("   Transliterator 'Latinka', created by FASADA OSG (PL)");
+  //println("=======================================================");
+  size(640, 640);//, P2D);
+  surface.setTitle("Transliteration example");
+  txaArea = new GTextArea(this, 10, 5, 640,315, 
                           G4P.SCROLLBARS_BOTH | 
-                          G4P.SCROLLBARS_AUTOHIDE)
-            {
+                          G4P.SCROLLBARS_AUTOHIDE);
+                          
+  txbArea = new GTextArea(this, 10,310,640,315, 
+                          G4P.SCROLLBARS_BOTH | 
+                          G4P.SCROLLBARS_AUTOHIDE);                       
+ /*           {
                 //int eventCounter=0;
                 public void mouseEvent(processing.event.MouseEvent event)
                 {
                   //println("MouseEvent",eventCounter++);
                   super.mouseEvent(event);
                 }
-            };
-  txaArea.setPromptText("Use Ctrl+V to paste some text here,\nselect text and Ctrl+C to copy");
-  txaArea.setOpaque(true);
+            }; */
+            
+  txaArea.setPromptText("Use Ctrl+V to paste some text here");
+  txbArea.setPromptText("Select text and Ctrl+C to copy");
+  txaArea.setOpaque(false);
+  txbArea.setOpaque(false);
 }
 
 void handleTextEvents(GEditableTextControl textcontrol, GEvent event) 
@@ -41,19 +51,19 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
     //print("TextEvent:",event);
     if(event==event.CHANGED)
     { //Wykonaj transliteracje
-      String out="@@[ ";
+      String out="";
       out=trBelorusCyrLat(textcontrol.getText(),out);
-      println("--> "+textcontrol.getText()+'\n'+out);
+      //println("--> "+textcontrol.getText()+'\n'+out);
+      txbArea.setText(out);
     }
     
     if(event==event.ENTERED)//Wklejanie zaraz po ENTER powoduje błąd!
     {
       textcontrol.setText(textcontrol.getText()+".                   ");//To pomaga choć nie wiadomo na ile    
-      println();
+      //println();
     }
 }
 
-public void draw(){
-  background(250,245,0);
-  //txtArea.
+void draw(){
+  background(250,245,0);//??? noLoop() ???
 }

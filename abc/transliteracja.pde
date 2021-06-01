@@ -1,5 +1,5 @@
 /**
-2021 (c) Fasada Open Software PL
+2021 (c) Fasada Open Software Group PL
 
 https://en.wikipedia.org/wiki/Glagolitic_script
 https://en.wikipedia.org/wiki/Polish_alphabet
