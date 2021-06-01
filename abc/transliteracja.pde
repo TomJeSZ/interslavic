@@ -55,3 +55,7 @@ String trTemplate(String inp,String out)
   
   return out;
 }
+
+/**
+https://github.com/TomJeSZ/interslavic/tree/main/abc
+*/

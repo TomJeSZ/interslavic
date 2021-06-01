@@ -31,9 +31,9 @@ String trBelorusCyrLat(String inp,String out)
     //case 'Дз':
     //case 'дз  dz
     case 'Е':big=1;
-    case 'е':out+=(big > 0 ?"Je":"ie");big=0;break;  //  je, ie
+    case 'е':out+=(big > 0 ?"Je":"je");big=0;break;  //  je, ie
     case 'Ё':big=1;
-    case 'ё':out+=(big > 0 ?"Jo":"io");big=0;break;  //  jo, io
+    case 'ё':out+=(big > 0 ?"Jo":"jo");big=0;break;  //  jo, io
     case 'Ж':big=1;
     case 'ж':out+=(big > 0 ?'Ž':'ž');big=0;break;  //  ž?
     case 'З':big=1;
@@ -164,3 +164,7 @@ String trBelorusCyrLat(String inp,String out)
   
   return out;
 }
+
+/**
+https://github.com/TomJeSZ/interslavic/tree/main/abc
+*/
