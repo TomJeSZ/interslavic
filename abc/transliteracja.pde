@@ -39,3 +39,19 @@ abeceda f. alfabet, abecadło
 Р. кир.: б в г д ж з й к л м н п р с т ф (ѳ) х ц ч ш щ
 
 */
+
+String trTemplate(String inp,String out)
+{
+  for(int p=0;p<inp.length();p++)
+  {
+    char c=inp.charAt(p);
+    switch( c ){
+    case 'a':out+='@';break;  
+    //...
+    default:
+    out+=c;break;
+    }//end switch
+  }
+  
+  return out;
+}

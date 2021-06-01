@@ -41,14 +41,16 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
     //print("TextEvent:",event);
     if(event==event.CHANGED)
     { //Wykonaj transliteracje
-      //...
-      println("-->",textcontrol.getText());
+      String out="@@[ ";
+      out=trBelorusCyrLat(textcontrol.getText(),out);
+      println("--> "+textcontrol.getText()+'\n'+out);
     }
     
     if(event==event.ENTERED)//Wklejanie zaraz po ENTER powoduje błąd!
-      textcontrol.setText(textcontrol.getText()+".                   ");//To pomaga choć nie wiadomo na ile
-    
-    println();
+    {
+      textcontrol.setText(textcontrol.getText()+".                   ");//To pomaga choć nie wiadomo na ile    
+      println();
+    }
 }
 
 public void draw(){
