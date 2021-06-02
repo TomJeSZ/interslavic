@@ -20,10 +20,10 @@ GTextArea txaArea,txbArea;
 
 public void setup(){
   println("=======================================================");
-  println("Transliterator 'Latinka' v.01, created by FASADA OSG PL");
+  println("Transliterator 'Latinka' v.02, created by FASADA OSG PL");
   //println("=======================================================");
   size(640, 640);//, P2D);
-  surface.setTitle("Latinka v.01");
+  surface.setTitle("Latinka v.02");
   txaArea = new GTextArea(this, 10, 5, 640,215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
@@ -53,7 +53,8 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
     if(event==event.CHANGED)
     { //Wykonaj transliteracje
       String out=textcontrol.getText()+"\n===\n";
-      out=trBelorusCyrLat(textcontrol.getText(),out);
+      //out=trBelorusCyrLat(textcontrol.getText(),out);
+      out=trUkrainianCyrLat(textcontrol.getText(),out);
       //println("--> "+textcontrol.getText()+'\n'+out);
       txbArea.setText(out);
     }

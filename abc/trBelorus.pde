@@ -143,15 +143,15 @@ String trBelorusCyrLat(String inp,String out)
     //Missed softenings 
     case 'Ь': big=1;
     case 'ь': println(""+inp.charAt(p-1)+c+'!');
-              out+=(big > 0 ?'\'':'\'');big=0;break;  //  combining acute
+              out+=(big > 0 ?'ʹ':'ʹ');big=0;break;  //  combining acute
     case 'ʼ': println(""+inp.charAt(p-1)+c+'?');
-              out+='\'';big=0;break;  //  - ??? 
+              out+='ʹ';big=0;break;  //  - ??? 
     
     //Historical letters  
     case 'И':big=1;
     case 'и':out+=(big > 0 ?'I':'i');big=0;break;  // 'i' rosyjskie? 
     case 'Щ':big=1;
-    case 'щ':out+=(big > 0 ?"šč":"šč");big=0;break; //'szcz' rosyjskie?
+    case 'щ':out+=(big > 0 ?"Šč":"šč");big=0;break; //'szcz' rosyjskie?
     case 'Ъ':
     case 'ъ':
     case 'Ѣ':
@@ -162,7 +162,7 @@ String trBelorusCyrLat(String inp,String out)
     }//end switch
   }
   
-  return out;
+  return out+" (National 2007)";
 }
 
 /**
