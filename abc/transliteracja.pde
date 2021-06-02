@@ -9,7 +9,9 @@ https://en.wikipedia.org/wiki/Belarusian_alphabet
 https://en.wikipedia.org/wiki/Romanization_of_Belarusian
 https://en.wikipedia.org/wiki/Bulgarian_alphabet
 https://en.wikipedia.org/wiki/Romanization_of_Bulgarian
+https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic
 
+http://steen.free.fr/interslavic/orthography.html
 http://pl.neoslavonic.org/lessons/1
 http://tutorial.neoslavonic.org/lessons/1/glagolica.gif
 
