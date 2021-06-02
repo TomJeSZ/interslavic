@@ -40,7 +40,7 @@ public void setup(){
                 }
             }; */
             
-  txaArea.setPromptText("Use Ctrl+V to paste some text here");
+  txaArea.setPromptText("Use Ctrl+V to paste some Ukrainian text here");
   txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here");
   txaArea.setOpaque(false);
   txbArea.setOpaque(false);

@@ -1,7 +1,10 @@
-# interslavic
-Tool for interslavic communication
+# interslavic - Toolbox for interslavic communication
 
-Сѫгласкы:
+## Transliterations
+
+See 'Latinka' or working directory 'abc'
+
+### Сѫгласкы:
 
 Лат.: b v w g d z j c k q l m n p r s t f h x
 
