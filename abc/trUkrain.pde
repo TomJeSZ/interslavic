@@ -44,16 +44,18 @@ case 'Ц':big=1;     case 'ц': out+=(big > 0 ?'C':'c');big=0;break;  //c
 case 'Ч':big=1;     case 'ч': out+=(big > 0 ?'Č':'č');big=0;break;  //č
 case 'Ш':big=1;     case 'ш': out+=(big > 0 ?'Š':'š');big=0;break;  //š
 case 'Щ':big=1;     case 'щ': out+=(big > 0 ?"Šč":"šč");big=0;break;//šč
-case 'Ь':big=1;     case 'ь': out+=(big > 0 ?'ʹ':'ʹ');big=0;break;  //ʹ
 case 'Ю':big=1;     case 'ю': out+=(big > 0 ?"Ju":"ju");big=0;break;//ju
 case 'Я':big=1;     case 'я': out+=(big > 0 ?"Ja":"ja");big=0;break;//ja
+
+case 'Ь':big=1;     case 'ь': out+=(big > 0 ?'ʹ':'ʹ');big=0;break;  //ʹ
 case 'ʼ': out+=(big > 0 ?'ʺ':'ʺ');big=0;break;  //ʺ
+
     default://All other characters 
       out+=c;big=0;break;
     }//end switch
   }
   
-  return out+" (GOST 1986y)";
+  return out+"\n[GOST 1986y]";
 }
 
 /**

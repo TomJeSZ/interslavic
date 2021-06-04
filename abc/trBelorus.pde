@@ -97,7 +97,7 @@ String trBelorusCyrLat(String inp,String out)
     //case 'ть':
     case 'т':if(inp.charAt(p+1)=='ь' || inp.charAt(p+1)=='Ь')
              {
-               out+=(big > 0 ?"T'":"ť");p++;big=0;break;  //  ť 
+               out+=(big > 0 ?"Ť":"ť");p++;big=0;break;  //  ť 
              }
              else
              {
@@ -153,7 +153,7 @@ String trBelorusCyrLat(String inp,String out)
     case 'Щ':big=1;
     case 'щ':out+=(big > 0 ?"Šč":"šč");big=0;break; //'szcz' rosyjskie?
     case 'Ъ':
-    case 'ъ':
+    case 'ъ':break;
     case 'Ѣ':
     case 'ѣ'://ê
 
@@ -162,7 +162,7 @@ String trBelorusCyrLat(String inp,String out)
     }//end switch
   }
   
-  return out+" (National 2007)";
+  return out+"\n[National 2007]";
 }
 
 /**

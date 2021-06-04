@@ -15,15 +15,19 @@ import g4p_controls.*;
 //  }
 //}
 
- 
+  
+
+PFont myFont; 
 GTextArea txaArea,txbArea;
 
 public void setup(){
   println("=======================================================");
-  println("Transliterator 'Latinka' v.02, created by FASADA OSG PL");
+  println("Transliterator 'Latinka' v.03, created by FASADA OSG PL");
   //println("=======================================================");
   size(640, 640);//, P2D);
-  surface.setTitle("Latinka v.02");
+  //myFont = createFont("Georgia", 32);
+  //textFont(myFont);
+  surface.setTitle("Latinka v.03");
   txaArea = new GTextArea(this, 10, 5, 640,215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
@@ -40,7 +44,7 @@ public void setup(){
                 }
             }; */
             
-  txaArea.setPromptText("Use Ctrl+V to paste some Ukrainian text here");
+  txaArea.setPromptText("Use Ctrl+V to paste some Interslavic cyrylic text here");
   txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here");
   txaArea.setOpaque(false);
   txbArea.setOpaque(false);
@@ -52,9 +56,11 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
     //print("TextEvent:",event);
     if(event==event.CHANGED)
     { //Wykonaj transliteracje
-      String out=textcontrol.getText()+"\n===\n";
+      String out=textcontrol.getText()+"\n===>\n";
       //out=trBelorusCyrLat(textcontrol.getText(),out);
-      out=trUkrainianCyrLat(textcontrol.getText(),out);
+      //out=trUkrainianCyrLat(textcontrol.getText(),out);
+      //out=trScientificCyrLat(textcontrol.getText(),out);
+      out=trInterlavic(textcontrol.getText(),out);
       //println("--> "+textcontrol.getText()+'\n'+out);
       txbArea.setText(out);
     }

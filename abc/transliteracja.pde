@@ -1,6 +1,8 @@
 /**
 2021 (c) Fasada Open Software Group PL
 
+https://pl.wikibooks.org/wiki/Unicode/Alfabet_%C5%82aci%C5%84ski/%C5%81aci%C5%84ski_rozszerzony_A
+
 https://en.wikipedia.org/wiki/Glagolitic_script
 https://en.wikipedia.org/wiki/Polish_alphabet
 https://en.wikipedia.org/wiki/Ukrainian_alphabet
@@ -21,7 +23,6 @@ Możliwe jest także korzystanie dla własnej przyjemności, z pierwszego w hist
 
 POMOCNICZO --> https://interslavic-dictionary.com/
            --> http://steen.free.fr/interslavic/slovianto1.html
-           --> http://steen.free.fr/interslavic/orthography.html
            --> http://steen.free.fr/interslavic/ms-pl.html
 
 abažur m. abażur
