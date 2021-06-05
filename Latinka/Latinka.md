@@ -1,10 +1,10 @@
-# Latinka v.02
+# Latinka v.03
 
 The program transliterates Cyrillic texts into Latin versions.
 
-Version 0.01 works only for Belarusian Cyrillic.
-
-Version 0.02 works only for Ukrainian Cyrillic.
+* Version 0.01 works only for Belarusian Cyrillic.
+* Version 0.02 works only for Ukrainian Cyrillic.
+* Version 0.03 works only for Interslavic Cirillic.
 
 1) Download ZIP file suitable for your system (https://t.me/fasadaOSG/13 )
 2) Unpack it
@@ -14,5 +14,6 @@ Version 0.02 works only for Ukrainian Cyrillic.
 For run application you need Java 8 installed in your system.
 
 https://java.com/en/download/
+
 
 
