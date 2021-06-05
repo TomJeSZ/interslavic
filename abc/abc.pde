@@ -22,12 +22,12 @@ GTextArea txaArea,txbArea;
 
 public void setup(){
   println("=======================================================");
-  println("Transliterator 'Latinka' v.03, created by FASADA OSG PL");
+  println("Transliterator 'Latinka' v.031, created by FASADA OSG PL");
   //println("=======================================================");
   size(640, 640);//, P2D);
   //myFont = createFont("Georgia", 32);
   //textFont(myFont);
-  surface.setTitle("Latinka v.03");
+  surface.setTitle("Latinka v.031");
   txaArea = new GTextArea(this, 10, 5, 640,215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
