@@ -71,6 +71,10 @@ String crInterlavic(String inp,String out)
     case 'Ś':big=1;case 'ś':out+=(big > 0 ?"СЬ":"сь");big=0;break;//  С@с Ь@ь
     case 'Ź':big=1;case 'ź':out+=(big > 0 ?"ЗЬ":"зь");big=0;break;//  З@з Ь@ь
     case 'Ń':big=1;case 'ń':out+=(big > 0 ?'Њ':'њ');big=0;break;//  Њ@њ
+    case 'Ę':big=1;case 'ę':out+=(big > 0 ?"Eн":"eн");big=0;break;// ?
+    case 'Ą':big=1;case 'ą':out+=(big > 0 ?"Oм":"oм");big=0;break;// ?'OМ':'oм'
+    case 'Ł':big=1;case 'ł':out+=(big > 0 ?'Л':'л');big=0;break;//
+    case 'W':big=1;case 'w':out+=(big > 0 ?'В':'в');big=0;break;//
     //...
     default:
     out+=c;break;
