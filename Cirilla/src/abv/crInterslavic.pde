@@ -33,7 +33,8 @@ String crInterlavic(String inp,String out)
     case 'H':big=1;case 'h':out+=(big > 0 ?'Х':'х');big=0;break;//  Х@х
     case 'I':big=1;case 'i':out+=(big > 0 ?'И':'и');big=0;break;//  И@и
     //I -> Ы@ы ?
-    case 'J':big=1;case 'j':out+=(big > 0 ?'Й':'й');big=0;break;//  Й@й
+//    case 'J':big=1;case 'j':out+=(big > 0 ?'Й':'й');big=0;break;//  Й@й
+    case 'J':big=1;case 'j':out+=(big > 0 ?'Ј':'ј');big=0;break;//  Й@й : Ј (Й)  J  J  [j]  ј (й) -> 'Ꙇ' to jest male od "Ј"?
     case 'K':big=1;case 'k':out+=(big > 0 ?'К':'к');big=0;break;//  К@к
     case 'L':big=1;case 'l':if(inp.charAt(p+1)=='J' || inp.charAt(p+1)=='j')//'LJ' & 'lj':
                             {out+=(big > 0 ?'Љ':'љ');p++;big=0;break;}//  Љ@љ
@@ -71,8 +72,10 @@ String crInterlavic(String inp,String out)
     case 'Ś':big=1;case 'ś':out+=(big > 0 ?"СЬ":"сь");big=0;break;//  С@с Ь@ь
     case 'Ź':big=1;case 'ź':out+=(big > 0 ?"ЗЬ":"зь");big=0;break;//  З@з Ь@ь
     case 'Ń':big=1;case 'ń':out+=(big > 0 ?'Њ':'њ');big=0;break;//  Њ@њ
-    case 'Ę':big=1;case 'ę':out+=(big > 0 ?"Eн":"eн");big=0;break;// ?
-    case 'Ą':big=1;case 'ą':out+=(big > 0 ?"Oм":"oм");big=0;break;// ?'OМ':'oм'
+//case 'Ę':big=1;case 'ę':out+=(big > 0 ?"Eн":"eн");big=0;break;// ?
+    case 'Ę':big=1;case 'ę':out+=(big > 0 ?"E":"e");big=0;break;// ? Ѧ ѧ ?
+//case 'Ą':big=1;case 'ą':out+=(big > 0 ?"Oм":"oм");big=0;break;// ?'OМ':'oм'
+    case 'Ą':big=1;case 'ą':out+=(big > 0 ?"O":"o");big=0;break;// ? Ѫ ѫ ?
     case 'Ł':big=1;case 'ł':out+=(big > 0 ?'Л':'л');big=0;break;//
     case 'W':big=1;case 'w':out+=(big > 0 ?'В':'в');big=0;break;//
     //...

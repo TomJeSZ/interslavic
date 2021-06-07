@@ -73,7 +73,7 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
 }
 
 void draw(){
-  background(250,245,0);//random(255));//??? noLoop() ???
+  background(0,245,255);//random(255));//??? noLoop() ???
 }
 
 /**
