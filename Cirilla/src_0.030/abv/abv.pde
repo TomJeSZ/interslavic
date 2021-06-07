@@ -11,7 +11,7 @@ GTextArea txaArea,txbArea;
 
 public void setup(){
   println("=======================================================");
-  println("Transliterator 'Cirilla' v.030, created by FASADA OSG PL");
+  println("Transliterator 'Cirilla' v.03, created by FASADA OSG PL");
   //println("=======================================================");
   size(640, 640);//, P2D);
   //myFont = createFont("Georgia", 32);
