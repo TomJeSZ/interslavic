@@ -14,14 +14,16 @@ String crInterlavic(String inp,String out)
   {
     char c=inp.charAt(p);
     switch( c ){
-    //Latin                               -> Cyrillic                       Etymological
+    //Latin                               -> Cyrillic                       
     case 'A':big=1;case 'a':out+=(big > 0 ?'А':'а');big=0;break;//    А@а  
-    case 'B':big=1;case 'b':out+=(big > 0 ?'Б':'б');big=0;break;//  Б@б
-    case 'C':big=1;case 'c':
-    //(CZ,CX)
-                            out+=(big > 0 ?'Ц':'ц');big=0;break;//  Ц@ц
-    case 'Č':big=1;case 'č':out+=(big > 0 ?'Ч':'ч');big=0;break;//  Ч@ч
-    case 'D':big=1;case 'd':out+=(big > 0 ?'Д':'д');big=0;break;//  Д@д
+    case 'B':big=1;case 'b':out+=(big > 0 ?'Б':'б');big=0;break;//    Б@б
+    case 'C':big=1;case 'c':if(inp.charAt(p+1)=='Z' || inp.charAt(p+1)=='z'
+                            || inp.charAt(p+1)=='X' || inp.charAt(p+1)=='x')//(CZ,CX)
+                            {out+=(big > 0 ?'Ч':'ч');p++;big=0;break;}//    Ч@ч
+                            else
+                            {out+=(big > 0 ?'Ц':'ц');big=0;break;}//  Ц@ц
+    case 'Č':big=1;case 'č':out+=(big > 0 ?'Ч':'ч');big=0;break;  //  Ч@ч
+    case 'D':big=1;case 'd':out+=(big > 0 ?'Д':'д');big=0;break;  //  Д@д
     //case 'DŽ  ДЖ' --> AUTO
     case 'E':big=1;case 'e':out+=(big > 0 ?'Е':'е');big=0;break;//  Е@е
     //case E -> Є@є ?
@@ -33,23 +35,33 @@ String crInterlavic(String inp,String out)
     //I -> Ы@ы ?
     case 'J':big=1;case 'j':out+=(big > 0 ?'Й':'й');big=0;break;//  Й@й
     case 'K':big=1;case 'k':out+=(big > 0 ?'К':'к');big=0;break;//  К@к
-    case 'L':big=1;case 'l':out+=(big > 0 ?'Л':'л');big=0;break;//  Л@л
-    //case 'LJ':big=1;case 'lj':out+=(big > 0 ?'Љ':'љ');big=0;break;//  Љ@љ
+    case 'L':big=1;case 'l':if(inp.charAt(p+1)=='J' || inp.charAt(p+1)=='j')//'LJ' & 'lj':
+                            {out+=(big > 0 ?'Љ':'љ');p++;big=0;break;}//  Љ@љ
+                            else
+                            {out+=(big > 0 ?'Л':'л');big=0;break;}//  Л@л
     case 'M':big=1;case 'm':out+=(big > 0 ?'М':'м');big=0;break;//  М@м
-    case 'N':big=1;case 'n':out+=(big > 0 ?'Н':'н');big=0;break;//  Н@н
-    //case 'NJ':big=1;case 'nj':out+=(big > 0 ?'Њ':'њ');big=0;break;//  Њ@њ
+    case 'N':big=1;case 'n':if(inp.charAt(p+1)=='J' || inp.charAt(p+1)=='j')//'NJ' & 'nj':
+                            {out+=(big > 0 ?'Њ':'њ');p++;big=0;break;}//  Њ@њ
+                            else
+                            {out+=(big > 0 ?'Н':'н');big=0;break;}//  Н@н
     case 'O':big=1;case 'o':out+=(big > 0 ?'О':'о');big=0;break;//  О@о
     case 'P':big=1;case 'p':out+=(big > 0 ?'П':'п');big=0;break;//  П@п
     case 'R':big=1;case 'r':out+=(big > 0 ?'Р':'р');big=0;break;//  Р@р
-    case 'S':big=1;case 's':out+=(big > 0 ?'С':'с');big=0;break;//  С@с
-    //(SZ,SX)
-    case 'Š':big=1;case 'š':out+=(big > 0 ?'Ш':'ш');big=0;break;   //Ш@ш
-    case 'T':big=1;case 't':out+=(big > 0 ?'Т':'т');big=0;break;//  Т@т
-    case 'U':big=1;case 'u':out+=(big > 0 ?'У':'у');big=0;break;//  У@у
-    case 'V':big=1;case 'v':out+=(big > 0 ?'В':'в');big=0;break;//  В@в
-    case 'Y':big=1;case 'y':out+=(big > 0 ?'Ы':'ы');big=0;break;//  Ы@ы
-    case 'Z':big=1;case 'z':out+=(big > 0 ?'З':'з');big=0;break;//  З@з
-    //ZS,ZX
+    case 'S':big=1;case 's':if(inp.charAt(p+1)=='Z' || inp.charAt(p+1)=='z'
+                            || inp.charAt(p+1)=='X' || inp.charAt(p+1)=='x')
+                            {out+=(big > 0 ?'Ш':'ш');p++;big=0;break;}// (SZ,SX)
+                            else
+                            {out+=(big > 0 ?'С':'с');big=0;break;}//  С@с
+    case 'Š':big=1;case 'š':out+=(big > 0 ?'Ш':'ш');big=0;break;  //  Ш@ш
+    case 'T':big=1;case 't':out+=(big > 0 ?'Т':'т');big=0;break;  //  Т@т
+    case 'U':big=1;case 'u':out+=(big > 0 ?'У':'у');big=0;break;  //  У@у
+    case 'V':big=1;case 'v':out+=(big > 0 ?'В':'в');big=0;break;  //  В@в
+    case 'Y':big=1;case 'y':out+=(big > 0 ?'Ы':'ы');big=0;break;  //  Ы@ы
+    case 'Z':big=1;case 'z':if(inp.charAt(p+1)=='Z' || inp.charAt(p+1)=='z'
+                            || inp.charAt(p+1)=='X' || inp.charAt(p+1)=='x')
+                            {out+=(big > 0 ?'Ж':'ж');p++;big=0;break;}    //ZS,ZX
+                            else
+                            {out+=(big > 0 ?'З':'з');big=0;break;}  //  З@з
     case 'Ż':big=1;
     case 'Ž':big=1;
     case 'ż':
