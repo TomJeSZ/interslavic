@@ -3,7 +3,7 @@
 https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic
 */
 
-String trScientificCyrLat(String inp,String out)
+String trScientific(String inp,String out)
 //transliteration from  Cyrillic ISO 9 (extended for historical letters)
 {
   int big=0;

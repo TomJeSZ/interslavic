@@ -4,7 +4,7 @@ https://en.wikipedia.org/wiki/Belarusian_alphabet
 https://en.wikipedia.org/wiki/Romanization_of_Belarusian
 */
 
-String trBelorusCyrLat(String inp,String out)
+String trBelorus(String inp,String out)
 //transliteration from Cyrillic into National 2007 standard
 { 
   int big=0;

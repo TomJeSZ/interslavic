@@ -4,7 +4,7 @@ https://en.wikipedia.org/wiki/Ukrainian_alphabet
 https://en.wikipedia.org/wiki/Romanization_of_Ukrainian
 */
 
-String trUkrainianCyrLat(String inp,String out)
+String trUkrainian(String inp,String out)
 //transliteration from  Cyrillic into GOST 1986, but 'И' --> 'Y'
 {
   int big=0;
