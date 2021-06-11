@@ -1,4 +1,4 @@
-//Font Example
+//Font lister based on Processing Example
 
 PFont myFont;
 String[] fontList;
