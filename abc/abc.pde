@@ -3,9 +3,10 @@ Prototypowa aplikacja do zamiany liter
 2021 (c) Fasada Open Software Group PL
 */
 
+import java.awt.Font;
 import g4p_controls.*;
 
-PFont myFont; 
+PFont     myFont; 
 GTextArea txaArea,txbArea;
 GDropList mydList;
 GButton   button1;
@@ -17,13 +18,15 @@ public void setup()
   //println("=======================================================");
   size(640, 640);//, P2D);
   frameRate(10);
-  //myFont = createFont("Georgia", 32);
-  //textFont(myFont);
+  myFont = createFont("Dialog.plain", 12);
+  textFont(myFont);
+  //G4P.setDefaultFont("Dialog.plain", 0, 10);   
+
   surface.setTitle("Latinka v.04 - MULTI");
   txaArea = new GTextArea(this, 10, 5, 640, 215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
-                          
+    
   mydList= new GDropList(this,
                  15,210,
                  550,90,
@@ -37,9 +40,15 @@ public void setup()
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);                       
 
+
+  Font withGlagilicFont=new Font("Dialog.plain", Font.PLAIN,12);
+  txaArea.setFont(withGlagilicFont); 
+  txbArea.setFont(withGlagilicFont); 
+  
   txaArea.setPromptText("Use Ctrl+V to paste some Interslavic cyrylic text here");
   txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
                          "Please send comments and suggestions to: https://t.me/fasadaOSG ");
+  
   txaArea.setOpaque(false);
   txbArea.setOpaque(false);
   mydList.setOpaque(false);
@@ -56,7 +65,7 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
 {
     //print("TextEvent:",event);
     if( textcontrol==txaArea
-    && event==event.CHANGED)
+    && event==GEvent.CHANGED)
     { //Wykonaj transliteracje
       String out=textcontrol.getText()+"\n===>\n";
       switch(mydList.getSelectedIndex()){
@@ -71,7 +80,7 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
       txbArea.setText(out);
     }
     
-    if(event==event.ENTERED)//Wklejanie zaraz po ENTER powoduje błąd!
+    if(event==GEvent.ENTERED)//Wklejanie zaraz po ENTER powoduje błąd!
     {
       textcontrol.setText(textcontrol.getText()+".                   ");//To pomaga choć nie wiadomo na ile    
       //println();
