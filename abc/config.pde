@@ -1,5 +1,6 @@
 /** Font configuration & possible others
 2021 (c) Fasada Open Software Group PL
+Channel: https://t.me/fasadaOSG
 */
 int     font_index=0;
 String  font_name="DialogInput.bold";
