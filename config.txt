@@ -1,0 +1,4 @@
+font_index:62
+font_name:Dialog.plain
+font_size:14
+font_face:0
