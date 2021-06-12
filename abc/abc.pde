@@ -1,6 +1,9 @@
 /**
 Prototypowa aplikacja do zamiany liter 
 2021 (c) Fasada Open Software Group PL
+https://t.me/fasadaOSG
+Authors: Tomasz Jerzy Szwed 
+       & Wojciech Tomasz Borkowski
 */
 
 import java.awt.Font;
@@ -15,14 +18,15 @@ public void setup()
 {
   println("=======================================================");
   println("Transliterator 'Latinka' v.04, created by FASADA OSG PL");
-  //println("=======================================================");
+  println("=======================================================");
   size(640, 640);//, P2D);
   frameRate(10);
   createGUI();
+  loadConfig("../config.txt");
+  
   myFont = createFont("Dialog.plain", 12);
   textFont(myFont);
-  //G4P.setDefaultFont("Dialog.plain", 0, 10);   
-
+  
   surface.setTitle("Latinka v.04 - MULTI");
   txaArea = new GTextArea(this, 10, 5, 640, 215, 
                           G4P.SCROLLBARS_BOTH | 
@@ -42,9 +46,10 @@ public void setup()
                           G4P.SCROLLBARS_AUTOHIDE);                       
 
 
-  Font withGlagilicFont=new Font("Dialog.plain", Font.PLAIN,12);
-  txaArea.setFont(withGlagilicFont); 
-  txbArea.setFont(withGlagilicFont); 
+  //Font withGlagilicFont=new Font(font_name,font_face,font_size);
+  //txaArea.setFont(withGlagilicFont); 
+  //txbArea.setFont(withGlagilicFont); 
+  my_font_changed();
   
   txaArea.setPromptText("Use Ctrl+V to paste some Interslavic cyrylic text here");
   txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
@@ -60,6 +65,13 @@ public void setup()
   mydList.addItem("Ukrainian cyrylic");
   mydList.addItem("Glagolitic");
   mydList.addItem("Cyrylic scientific");
+}
+
+void my_font_changed()
+{
+  Font selectedFont=new Font(font_name,font_face,font_size);
+  txaArea.setFont(selectedFont);
+  txbArea.setFont(selectedFont);
 }
 
 void handleTextEvents(GEditableTextControl textcontrol, GEvent event) 
@@ -118,6 +130,20 @@ void draw(){
   15,height-2);
 }
 
+/**
+Project: https://github.com/TomJeSZ/interslavic/
+The members of the Fasada Open Software Group 
+permit the free use of this code for private, 
+educational and research purposes,
+but if you feel that it would be appropriate to 
+repay somehow, please finance us 2 big coffees :-)
+here https://www.paypal.com/paypalme/wborkowsk
+..and the third one for Peter Lager, the author 
+of G4P library. 
+*/
+
+
+
 //class MyGTextArea extends GTextArea
 //{
 //  public void mouseEvent(processing.event.MouseEvent event)
@@ -136,6 +162,11 @@ void draw(){
                   super.mouseEvent(event);
                 }
             }; */
+
 /**
-https://github.com/TomJeSZ/interslavic/tree/main/abc
+Project: https://github.com/TomJeSZ/interslavic/
+Channel: https://t.me/fasadaOSG
+Ff you feel that it would be appropriate to repay somehow, please 
+finance us 2 big coffees :-)
+https://www.paypal.com/paypalme/wborkowsk
 */
