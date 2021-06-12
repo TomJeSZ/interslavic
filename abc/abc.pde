@@ -18,6 +18,7 @@ public void setup()
   //println("=======================================================");
   size(640, 640);//, P2D);
   frameRate(10);
+  createGUI();
   myFont = createFont("Dialog.plain", 12);
   textFont(myFont);
   //G4P.setDefaultFont("Dialog.plain", 0, 10);   
