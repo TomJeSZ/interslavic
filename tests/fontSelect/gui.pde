@@ -15,16 +15,27 @@
  */
 
 public void buttonOK_click1(GButton source, GEvent event) { //_CODE_:buttonOK:293005:
-  println("buttonOK - GButton >> GEvent." + event + " @ " + millis());
+  //println("buttonOK - GButton >> GEvent." + event + " @ " + millis());
+  fontToConfig();
+  saveConfig("../config.txt");
 } //_CODE_:buttonOK:293005:
 
 public void dropList_click1(GDropList source, GEvent event) { //_CODE_:dropListOfFonts:668570:
-  println("dropListOfFonts - GDropList >> GEvent." + event + " @ " + millis());
+  //println("dropListOfFonts - GDropList >> GEvent." + event + " @ " + millis());
+  font_index=dropListOfFonts.getSelectedIndex();
+  font_name=dropListOfFonts.getSelectedText();
+  font_changed();
 } //_CODE_:dropListOfFonts:668570:
 
 public void textarea1_change1(GTextArea source, GEvent event) { //_CODE_:textarea1:951420:
-  println("textarea1 - GTextArea >> GEvent." + event + " @ " + millis());
+  //println("textarea1 - GTextArea >> GEvent." + event + " @ " + millis());
 } //_CODE_:textarea1:951420:
+
+public void fsize_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_:fsize_slider:516832:
+  println("fsize_slider - GCustomSlider >> GEvent." + event + " @ " + millis());
+  font_size=fsize_slider.getValueI();
+  font_changed();
+} //_CODE_:fsize_slider:516832:
 
 
 
@@ -41,10 +52,17 @@ public void createGUI(){
   dropListOfFonts = new GDropList(this, 4, 18, 300, 264, 10, 30);
   dropListOfFonts.setItems(loadStrings("list_668570"), 0);
   dropListOfFonts.addEventHandler(this, "dropList_click1");
-  textarea1 = new GTextArea(this, 4, 49, 489, 445, G4P.SCROLLBARS_NONE);
+  textarea1 = new GTextArea(this, 4, 49, 489, 445, G4P.SCROLLBARS_VERTICAL_ONLY | G4P.SCROLLBARS_AUTOHIDE);
   textarea1.setText("abcdeefghijklmnoprstvxyz");
   textarea1.setOpaque(true);
   textarea1.addEventHandler(this, "textarea1_change1");
+  fsize_slider = new GCustomSlider(this, 307, 3, 100, 45, "grey_blue");
+  fsize_slider.setShowValue(true);
+  fsize_slider.setShowLimits(true);
+  fsize_slider.setLimits(12, 6, 24);
+  fsize_slider.setNumberFormat(G4P.INTEGER, 0);
+  fsize_slider.setOpaque(false);
+  fsize_slider.addEventHandler(this, "fsize_slider1_change1");
 }
 
 // Variable declarations 
@@ -52,3 +70,4 @@ public void createGUI(){
 GButton buttonOK; 
 GDropList dropListOfFonts; 
 GTextArea textarea1; 
+GCustomSlider fsize_slider; 
