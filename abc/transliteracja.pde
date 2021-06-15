@@ -1,6 +1,8 @@
 /**
 2021 (c) Fasada Open Software Group PL
+channel: https://t.me/fasadaOSG
 
+See:
 https://pl.wikibooks.org/wiki/Unicode/Alfabet_%C5%82aci%C5%84ski/%C5%81aci%C5%84ski_rozszerzony_A
 
 https://en.wikipedia.org/wiki/Glagolitic_script

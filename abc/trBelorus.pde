@@ -1,5 +1,7 @@
 /**
 2021 (c) Fasada Open Software Group PL
+Channel: https://t.me/fasadaOSG
+See:
 https://en.wikipedia.org/wiki/Belarusian_alphabet
 https://en.wikipedia.org/wiki/Romanization_of_Belarusian
 */
@@ -126,6 +128,11 @@ String trBelorus(String inp,String out)
   return out+"\n[National 2007]";
 }
 
+
 /**
-https://github.com/TomJeSZ/interslavic/tree/main/abc
+Project: https://github.com/TomJeSZ/interslavic/
+Tip: You can use this software freely for private, educational and research purposes, 
+but if you feel that it would be appropriate to repay somehow, please finance us 
+big coffees :-)
+https://www.paypal.com/paypalme/wborkowsk
 */

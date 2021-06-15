@@ -1,5 +1,7 @@
 /**
 2021 (c) Fasada Open Software Group PL
+Channel: https://t.me/fasadaOSG
+See:
 https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic
 */
 
@@ -89,3 +91,11 @@ String trScientific(String inp,String out)
   
   return out+"\n[ISO9 ext.]";
 }
+
+/**
+Project: https://github.com/TomJeSZ/interslavic/
+Tip: You can use this software freely for private, educational and research purposes, 
+but if you feel that it would be appropriate to repay somehow, please finance us 
+big coffees :-)
+https://www.paypal.com/paypalme/wborkowsk
+*/

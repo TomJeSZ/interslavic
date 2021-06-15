@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 font_index:27
 font_name:Dialog.plain
 font_size:12
+=======
+font_index:62
+font_name:Dialog.plain
+font_size:14
+>>>>>>> b8c77b223a341b8b6dc902e26739307515b48f37
 font_face:0

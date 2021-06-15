@@ -1,6 +1,6 @@
-/**
 /** Font configuration & possible others
 2021 (c) Fasada Open Software Group PL
+Channel: https://t.me/fasadaOSG
 */
 int     font_index=0;
 String  font_name="DialogInput.bold";
@@ -8,11 +8,11 @@ int     font_size=12;
 int     font_face=Font.PLAIN;
 StringDict    config=new StringDict();
 
-void font_changed()//example
-{
-  Font selectedFont=new Font(font_name,font_face,font_size);
-  textarea1.setFont(selectedFont);
-}
+//void example_font_changed()
+//{
+//  Font selectedFont=new Font(font_name,font_face,font_size);
+//  textarea1.setFont(selectedFont);
+//}
 
 void fontToConfig()
 {

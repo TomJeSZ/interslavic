@@ -1,4 +1,6 @@
-//Font lister based on Processing Example
+/** Font lister based on Processing Example
+2021 (c) Fasada Open Software Group PL
+*/
 
 PFont myFont;
 String[] fontList;
@@ -35,3 +37,7 @@ void draw()
         width/2, height/2);
   i=(i+1)%fontList.length;
 }
+
+/**
+https://github.com/TomJeSZ/interslavic/
+*/
