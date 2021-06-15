@@ -130,7 +130,7 @@ By Tu Sueño ♡
 
 Project: https://github.com/TomJeSZ/interslavic/
 Tip: You can use this software freely for private, educational and research purposes, 
-but if you feel that it would be appropriate to repay somehow, please finance us 
+but if you feel that it would be appropriate to repay somehow, please finance us two
 big coffees :-)
 https://www.paypal.com/paypalme/wborkowsk
 */

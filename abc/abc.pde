@@ -1,5 +1,5 @@
 /**
-Prototypowa aplikacja do zamiany liter 
+Aplikacja do zamiany liter (transliteracji) z cyrylicy i głagolicy na latinkę
 2021 (c) Fasada Open Software Group PL
 https://t.me/fasadaOSG
 Authors: Tomasz Jerzy Szwed 
@@ -166,7 +166,6 @@ of G4P library.
 /**
 Project: https://github.com/TomJeSZ/interslavic/
 Channel: https://t.me/fasadaOSG
-Ff you feel that it would be appropriate to repay somehow, please 
-finance us 2 big coffees :-)
+If you feel that it would be appropriate to repay somehow, please finance us two big coffees :-)
 https://www.paypal.com/paypalme/wborkowsk
 */
