@@ -14,12 +14,21 @@ https://en.wikipedia.org/wiki/Romanization_of_Belarusian
 https://en.wikipedia.org/wiki/Bulgarian_alphabet
 https://en.wikipedia.org/wiki/Romanization_of_Bulgarian
 https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic
+https://pl.wikipedia.org/wiki/J%C4%99zyk_tatarski (też cyrylica + kilka dziwnych liter)
+
+https://pl.wikipedia.org/wiki/Alfabet_grecki
+https://pl.wikipedia.org/wiki/Alfabet_ormia%C5%84ski
+https://pl.wikipedia.org/wiki/Pisma_gruzi%C5%84skie
+
+https://pl.wikipedia.org/wiki/Alfabet_fenicki
+https://pl.wikipedia.org/wiki/Alfabet_hebrajski
+https://pl.wikipedia.org/wiki/Alfabet_arabski
 
 http://steen.free.fr/interslavic/orthography.html
 http://pl.neoslavonic.org/lessons/1
 http://tutorial.neoslavonic.org/lessons/1/glagolica.gif
 
-Język nowosłowiański używa generalnie dwóch alfabetów: łacińskiego i cyrylicy. 
+Język nowo/między/słowiański używa generalnie dwóch alfabetów: łacińskiego i cyrylicy. 
 Ponadto ma także zapis dostępny w alfabecie ASCII  oraz alfabecie greckim. 
 Możliwe jest także korzystanie dla własnej przyjemności, z pierwszego w historii słowiańskiego pisma: głagolicy.
 
@@ -47,11 +56,13 @@ abeceda f. alfabet, abecadło
 
 String trTemplate(String inp,String out)
 {
+  int big=0;
   for(int p=0;p<inp.length();p++)
   {
     char c=inp.charAt(p);
     switch( c ){
-    case 'a':out+='@';break;  
+    case 'A':big=1;  
+    case 'a':/*(?:)*/out+='@';big=0;break;  
     //...
     default:
     out+=c;break;
