@@ -1,4 +1,4 @@
-font_index:62
-font_name:Dialog.plain
+font_index:24
+font_name:Dialog.bold
 font_size:13
-font_face:0
+font_face:1

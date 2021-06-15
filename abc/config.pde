@@ -50,7 +50,8 @@ void loadConfig(String configName)
   {
       println(data[i]);
       String[] splited=split(data[i],':');
-      config.set(splited[0],splited[1]);
+      if(splited.length == 2)
+        config.set(splited[0],splited[1]);
   }
   //println(config);
 }
