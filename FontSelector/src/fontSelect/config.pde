@@ -2,13 +2,15 @@
 /** Font configuration & possible others
 2021 (c) Fasada Open Software Group PL
 */
+import java.io.File;
+
 int     font_index=0;
 String  font_name="DialogInput.bold";
 int     font_size=12;
 int     font_face=Font.PLAIN;
 StringDict    config=new StringDict();
 
-void font_changed()//example
+void my_font_changed()//example
 {
   Font selectedFont=new Font(font_name,font_face,font_size);
   textarea1.setFont(selectedFont);
@@ -40,19 +42,26 @@ void saveConfig(String configName)
       keys[i]+=":"+vals[i];
       println(keys[i]);
   }
-  saveStrings(configName,keys);
+  
+  File file = new File(configName);
+  String path = file.getAbsolutePath();
+  println(path);
+  saveStrings(path,keys);
 }
 
 void loadConfig(String configName)
 {
-  String[] data=loadStrings(configName);
+  File file = new File(configName);
+  String path = file.getAbsolutePath();
+  println(path);
+  String[] data=loadStrings(path);
   for(int i=0;i<data.length;i++)
   {
       println(data[i]);
       String[] splited=split(data[i],':');
-      config.set(splited[0],splited[1]);
+      if(splited.length == 2)
+        config.set(splited[0],splited[1]);
   }
-  //println(config);
 }
 
 /**

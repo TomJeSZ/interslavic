@@ -2,6 +2,8 @@
 2021 (c) Fasada Open Software Group PL
 Channel: https://t.me/fasadaOSG
 */
+import java.io.File;
+
 int     font_index=0;
 String  font_name="DialogInput.bold";
 int     font_size=12;
@@ -40,12 +42,19 @@ void saveConfig(String configName)
       keys[i]+=":"+vals[i];
       println(keys[i]);
   }
-  saveStrings(configName,keys);
+  
+  File file = new File(configName);
+  String path = file.getAbsolutePath();
+  println(path);
+  saveStrings(path,keys);
 }
 
 void loadConfig(String configName)
 {
-  String[] data=loadStrings(configName);
+  File file = new File(configName);
+  String path = file.getAbsolutePath();
+  println(path);
+  String[] data=loadStrings(path);
   for(int i=0;i<data.length;i++)
   {
       println(data[i]);
@@ -53,7 +62,6 @@ void loadConfig(String configName)
       if(splited.length == 2)
         config.set(splited[0],splited[1]);
   }
-  //println(config);
 }
 
 /**

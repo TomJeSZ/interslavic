@@ -34,7 +34,7 @@ public void dropList_click1(GDropList source, GEvent event) { //_CODE_:dropListO
   {
                   font_face|=Font.BOLD;//println(font_face); //<>//
   }
-  font_changed();
+  my_font_changed();
 } //_CODE_:dropListOfFonts:668570:
 
 public void textarea1_change1(GTextArea source, GEvent event) { //_CODE_:textarea1:951420:
@@ -44,7 +44,7 @@ public void textarea1_change1(GTextArea source, GEvent event) { //_CODE_:textare
 public void fsize_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_:fsize_slider:516832:
   //println("fsize_slider - GCustomSlider >> GEvent." + event + " @ " + millis());
   font_size=fsize_slider.getValueI();
-  font_changed();
+  my_font_changed();
 } //_CODE_:fsize_slider:516832:
 
 

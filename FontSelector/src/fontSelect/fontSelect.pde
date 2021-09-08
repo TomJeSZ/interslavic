@@ -56,7 +56,7 @@ void setup()
     println("Invalid configuration! Select proper font ad click OK");
   //dropListOfFonts.setSelected(font_index);
   fsize_slider.setValue(font_size);
-  font_changed();
+  my_font_changed();
 }
 
 void draw()
