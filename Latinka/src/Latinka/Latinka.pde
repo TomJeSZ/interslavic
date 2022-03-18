@@ -22,10 +22,9 @@ public void setup()
   size(640, 640);//, P2D);
   frameRate(10);
   createGUI();
-  loadConfig("../config.txt");
   
-  myFont = createFont("Dialog.plain", 12);
-  textFont(myFont);
+  loadConfig("../config.txt");
+  configToFont();
   
   surface.setTitle("Latinka v.04 - MULTI");
   txaArea = new GTextArea(this, 10, 5, 640, 215, 
@@ -44,13 +43,7 @@ public void setup()
   txbArea = new GTextArea(this, 10,230,640,415, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);                       
-
-
-  //Font withGlagilicFont=new Font(font_name,font_face,font_size);
-  //txaArea.setFont(withGlagilicFont); 
-  //txbArea.setFont(withGlagilicFont); 
-  my_font_changed();
-  
+   
   txaArea.setPromptText("Use Ctrl+V to paste some Interslavic cyrylic text here");
   txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
                          "Please send comments and suggestions to: https://t.me/fasadaOSG ");
@@ -65,10 +58,13 @@ public void setup()
   mydList.addItem("Ukrainian cyrylic");
   mydList.addItem("Glagolitic");
   mydList.addItem("Cyrylic scientific");
+  
+  my_font_changed();
 }
 
 void my_font_changed()
 {
+  //println(font_name,font_face,font_size);
   Font selectedFont=new Font(font_name,font_face,font_size);
   txaArea.setFont(selectedFont);
   txbArea.setFont(selectedFont);

@@ -79,7 +79,7 @@ void setup()
     println("Loaded configuration seems to be valid");
     fsize_slider.setValue(font_size);
     
-    double realsize=font_changed().getSize();
+    double realsize=my_font_changed().getSize();
     if(realsize!=font_size)//because of size
       println("But size is",realsize);
   }
