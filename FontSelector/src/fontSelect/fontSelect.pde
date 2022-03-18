@@ -1,5 +1,5 @@
 /** Font selection dialog version 0.1
-2021 (c) Fasada Open Software Group PL
+2022 (c) Fasada Open Software Group PL
 See:
 https://discourse.processing.org/t/g4p-font-for-textfield/12732/2
 */
@@ -9,6 +9,7 @@ import g4p_controls.*;
 
 PFont     myFont;
 String[]  fontList;
+
 String    textToView=""
 +"EN * It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.\n"
 +"PL * Ogólnie znana teza głosi, iż użytkownika może rozpraszać zrozumiała zawartość strony, kiedy ten chce zobaczyć sam jej wygląd.\n"
@@ -34,29 +35,58 @@ String    textToView=""
 // GButton buttonOK; 
 // GDropList dropListOfFonts; 
 // GTextArea textarea1; 
-//GCustomSlider fsize_slider; 
+// GCustomSlider fsize_slider; 
+
+/// Load user defined text
+void loadtextToView()
+{
+  String[] data=loadStrings("../textToView.txt");
+  if(data==null || data.length==0)
+    println("Default text sample will be used");
+  else
+  {
+    String old=textToView;
+    textToView="";
+    for(String s:data)
+      textToView+=s+'\n';
+    textToView+=old;  
+  }
+}
 
 void setup() 
 {                                                                                                                        
   println("=======================================================");
-  println("        Font selector, created by FASADA OSG PL");
+  println("   Font selector, created by FASADA OSG PL\n   https://github.com/TomJeSZ/interslavic/");
   size(500,500);
   createGUI();
   
-  loadConfig("../config.txt");
-  configToFont();
-  println();
+  loadtextToView();
   textarea1.setText(textToView);
+  
+  println("\nData from config file:\n");
+  loadConfig("../config.txt");
+  println();
+  
+  configToFont();//Load font data from config dictionary
   fontList = PFont.list();
   dropListOfFonts.setItems(fontList,font_index);
-  String curr_name=dropListOfFonts.getSelectedText();//println(curr_name);
+  dropListOfFonts.setSelected(font_index);
+  String curr_name=dropListOfFonts.getSelectedText();
+  println("Currently selected font is [",dropListOfFonts.getSelectedIndex(),"]",curr_name);
+  
   if(font_name.equals(curr_name)==true)
-    println("Configuration is valid");
+  {
+    println("Loaded configuration seems to be valid");
+    fsize_slider.setValue(font_size);
+    
+    double realsize=font_changed().getSize();
+    if(realsize!=font_size)//because of size
+      println("But size is",realsize);
+  }
   else
-    println("Invalid configuration! Select proper font ad click OK");
-  //dropListOfFonts.setSelected(font_index);
-  fsize_slider.setValue(font_size);
-  font_changed();
+  {
+    println("Invalid configuration! Select proper font and click OK");
+  }
 }
 
 void draw()
@@ -84,8 +114,9 @@ void old_draw()
 
 /**
 Project: https://github.com/TomJeSZ/interslavic/
-Tip: You can use this software freely for private, educational and research purposes, 
-but if you feel that it would be appropriate to repay somehow, please finance us 
-big coffees :-)
-https://www.paypal.com/paypalme/wborkowsk
+
+Tip:     You can use this software freely for private, educational and research purposes, 
+         but if you feel that it would be appropriate to repay somehow, please finance us 
+         big coffees :-)
+         https://www.paypal.com/paypalme/wborkowsk
 */

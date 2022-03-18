@@ -8,10 +8,14 @@ int     font_size=12;
 int     font_face=Font.PLAIN;
 StringDict    config=new StringDict();
 
-void font_changed()//example
+Font font_changed()//example
 {
   Font selectedFont=new Font(font_name,font_face,font_size);
-  textarea1.setFont(selectedFont);
+  //if(selectedFont.isValid())
+      textarea1.setFont(selectedFont);
+  //else
+  //    println("Failed creation of font:",font_name,font_face,font_size);
+  return selectedFont;
 }
 
 void fontToConfig()
