@@ -19,7 +19,7 @@ String trUkrainian(String inp,String out)
     case 'Б':big=1;     case 'б': out+=(big > 0 ?'B':'b');big=0;break;  //b
     case 'В':big=1;     case 'в': out+=(big > 0 ?'V':'v');big=0;break;  //v
     case 'Г':big=1;     case 'г': out+=(big > 0 ?'G':'g');big=0;break;  //g  (gh)
-    case 'Ґ':big=1;     case 'ґ': out+=(big > 0 ?"G`":"g`");big=0;break;//g
+    case 'Ґ':big=1;     case 'ґ': out+=(big > 0 ?"G`":"ġ");big=0;break; //g g̀
     case 'Д':big=1;     case 'д': out+=(big > 0 ?'D':'d');big=0;break;  //d
     case 'Е':big=1;     case 'е': out+=(big > 0 ?'E':'e');big=0;break;  //e
     case 'Є':big=1;     case 'є': out+=(big > 0 ?"Je":"je");big=0;break;//je
@@ -49,7 +49,7 @@ String trUkrainian(String inp,String out)
     case 'Ю':big=1;     case 'ю': out+=(big > 0 ?"Ju":"ju");big=0;break;//ju
     case 'Я':big=1;     case 'я': out+=(big > 0 ?"Ja":"ja");big=0;break;//ja
     
-    case 'Ь':big=1;     case 'ь': out+=(big > 0 ?'ʹ':'ʹ');big=0;break;  //ʹ
+    case 'Ь':big=1;     case 'ь': out+=(big > 0 ?'\'':'\'');big=0;break;  //ʹ?
     case 'ʼ': out+=(big > 0 ?'ʺ':'ʺ');big=0;break;  //ʺ
 
     default://All other characters 

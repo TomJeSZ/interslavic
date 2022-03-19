@@ -83,6 +83,7 @@ String trInterlavic(String inp,String out)
     case 'Ь':big=1;     case 'ь':break;//out+=(big > 0 ?'':'');big=0;break;//  ʹ  ʹ
     case 'Ъ':           case 'ъ':break;
     //Extensions:
+    case 'Ґ':big=1;     case 'ґ': out+=(big > 0 ?"Ġ":"ġ");big=0;break; //Ġġ g g̀
     case 'Џ':big=1;     case 'џ': out+=(big > 0 ?"Ď":"ď");big=0;break;  // D z ptaszkiem?
     case 'Щ':big=1;     case 'щ':out+=(big > 0 ?"Šč":"šč");big=0;break; //'szcz' rosyjskie?
     case 'Ћ':big=1;     case 'ћ':out+=(big > 0 ?"Ćx":"ćx");big=0;break; // Ćć - miękkie 'cz'?

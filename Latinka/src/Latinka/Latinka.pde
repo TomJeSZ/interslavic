@@ -1,6 +1,6 @@
 /**
 Aplikacja do zamiany liter (transliteracji) z cyrylicy i głagolicy na latinkę
-2021 (c) Fasada Open Software Group PL
+2022 (c) Fasada Open Software Group PL
 https://t.me/fasadaOSG
 Authors: Tomasz Jerzy Szwed 
        & Wojciech Tomasz Borkowski
@@ -16,9 +16,9 @@ GButton   button1;
 
 public void setup()
 {
-  println("=======================================================");
-  println("Transliterator 'Latinka' v.04, created by FASADA OSG PL");
-  println("=======================================================");
+  println("=========================================================");
+  println("Transliterator 'Latinka' v.041, created by FASADA OSG PL ");
+  println("=========================================================");
   size(640, 640);//, P2D);
   frameRate(10);
   createGUI();
@@ -26,7 +26,7 @@ public void setup()
   loadConfig("../config.txt");
   configToFont();
   
-  surface.setTitle("Latinka v.04 - MULTI");
+  surface.setTitle("Latinka v.041 - MULTI");
   txaArea = new GTextArea(this, 10, 5, 640, 215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
@@ -34,7 +34,7 @@ public void setup()
   mydList= new GDropList(this,
                  15,210,
                  550,90,
-                 5, // listSize  
+                 6, // listSize  
                  52 // buttonWidth
                  );                      
                  
@@ -58,6 +58,7 @@ public void setup()
   mydList.addItem("Ukrainian cyrylic");
   mydList.addItem("Glagolitic");
   mydList.addItem("Cyrylic scientific");
+  mydList.addItem("Ukrainian->Polish (exp.)");
   
   my_font_changed();
 }
@@ -83,6 +84,7 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
       case 2:out=trUkrainian(textcontrol.getText(),out);break;
       case 3:out=trGlagolitic(textcontrol.getText(),out);break;
       case 4:out=trScientific(textcontrol.getText(),out);break;
+      case 5:out=trUkrPolExp(textcontrol.getText(),out);break;
       default: out="UNKNOWN TRANSLITERATION"; break;
       }
       //println("--> "+textcontrol.getText()+'\n'+out);

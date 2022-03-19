@@ -113,12 +113,12 @@ String trBelorus(String inp,String out)
               out+=(big > 0 ?'ʹ':'ʹ');big=0;break;  //  combining acute
     case 'ʼ': println(""+inp.charAt(p-1)+c+'?');
               out+='ʹ';big=0;break;  //  - ??? 
-    case 'Ъ':          case 'ъ':break;
+    case 'Ъ':          case 'ъ':break; // twardy znak (rosyjski?). Bez odpowiednika
         
     //Historical letters  
     case 'И':big=1;    case 'и':out+=(big > 0 ?'I':'i');big=0;break;  // 'i' rosyjskie? 
     case 'Щ':big=1;    case 'щ':out+=(big > 0 ?"Šč":"šč");big=0;break; //'szcz' rosyjskie?
-    case 'Ѣ':big=1;    case 'ѣ':out+=(big > 0 ?'E':'ê');big=0;break;//ê stare "je"?
+    case 'Ѣ':big=1;    case 'ѣ':out+=(big > 0 ?'E':'ê');big=0;break;//ê to stare "je"?
 
     default://All other characters 
       out+=c;big=0;break;
