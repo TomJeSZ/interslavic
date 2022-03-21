@@ -1,0 +1,4 @@
+font_index:136
+font_name:DialogInput.bold
+font_size:14
+font_face:1

@@ -1,0 +1,15 @@
+# Template for config.txt file
+#===============================
+#1. Copy to a sister file named 'config.txt'. 
+#2. Leave only the data that is compatible with your system.
+#FOR UBUNTU 20.04
+font_index:27
+font_name:Dialog.plain
+font_size:14
+font_face:0
+=======
+#FOR UBUNTU 18.04
+font_index:62
+font_name:Dialog.plain
+font_size:14
+font_face:0
