@@ -69,10 +69,11 @@ String trScientific(String inp,String out)
     case 'Я':big=1;     case 'я': out+=(big > 0 ?"Â":"â");big=0;break;//  Â  â
     //case 'ʼ':    ʼ
     //Extensions:
+    //case 'Ѫ':big=1;     case 'ѫ': out+=(big > 0 ?"Ą":"ą");big=0;break;//   
+    case 'Ѫ':big=1;     case 'ѫ': out+=(big > 0 ?"Ǎ":"ǎ");big=0;break;//   Ǎ  ǎ / Ą ą
     case 'Ѡ':big=1;     case 'ѡ': out+=(big > 0 ?"Ô":"ô");big=0;break;//   O, Ô  o, ô
     case 'Ѧ':big=1;     case 'ѧ': out+=(big > 0 ?"Ę":"ę");big=0;break;//   Ę  ę
     case 'Ѩ':big=1;     case 'ѩ': out+=(big > 0 ?"JĘ":"ję");big=0;break;//   JĘ  ję
-    case 'Ѫ':big=1;     case 'ѫ': out+=(big > 0 ?"Ǎ":"ǎ");big=0;break;//   Ǎ  ǎ
     case 'Ѭ':big=1;     case 'ѭ': out+=(big > 0 ?"JǪ":"jǫ");big=0;break;//   JǪ  jǫ
     case 'Ѯ':big=1;     case 'ѯ': out+=(big > 0 ?"KS":"ks");big=0;break;//   KS  ks
     case 'Ѱ':big=1;     case 'ѱ': out+=(big > 0 ?"PS":"ps");big=0;break;//   PS  ps

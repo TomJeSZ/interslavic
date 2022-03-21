@@ -1,5 +1,7 @@
 /**
 2021 (c) Fasada Open Software Group PL
+Channel: https://t.me/fasadaOSG
+See:
 http://steen.free.fr/interslavic/orthography.html
 http://pl.neoslavonic.org/lessons/1
 http://tutorial.neoslavonic.org/lessons/1/glagolica.gif
@@ -86,3 +88,11 @@ String crInterlavic(String inp,String out)
   
   return out+"\n[Interslavic std.ext.]";
 }
+
+/**
+Project: https://github.com/TomJeSZ/interslavic/
+Tip: You can use this software freely for private, educational and research purposes, 
+but if you feel that it would be appropriate to repay somehow, please finance us 
+big coffees :-)
+https://www.paypal.com/paypalme/wborkowsk
+*/

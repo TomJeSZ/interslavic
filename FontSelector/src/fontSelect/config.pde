@@ -55,9 +55,10 @@ void saveConfig(String configName)
 
 void loadConfig(String configName)
 {
-  File file = new File(configName);
-  String path = file.getAbsolutePath();
-  println(path);
+  String path=configName;
+  //File file = new File(configName);
+  //path = file.getAbsolutePath();
+  //println(path);
   String[] data=loadStrings(path);
   if(data==null)
   {

@@ -6,7 +6,6 @@ Authors: Tomasz Jerzy Szwed
        & Wojciech Tomasz Borkowski
 */
 
-import java.awt.Font;
 import g4p_controls.*;
 
 PFont     myFont; 
@@ -124,7 +123,7 @@ void handleDropListEvents(GDropList list, GEvent event)
 void draw(){
   background(250,245,0);//random(255));//??? noLoop() ???
   textAlign(LEFT,BOTTOM);
-  text("2021©Fasada Open Software Group (https://github.com/TomJeSZ/interslavic/)",
+  text("2022©Fasada Open Software Group (https://github.com/TomJeSZ/interslavic/)",
   15,height-2);
 }
 

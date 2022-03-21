@@ -1,12 +1,13 @@
 /** Font configuration & possible others
-2021 (c) Fasada Open Software Group PL
+2022 (c) Fasada Open Software Group PL
 Channel: https://t.me/fasadaOSG
 */
 import java.io.File;
+import java.awt.Font;
 
 int     font_index=0;
 String  font_name="DialogInput.bold";
-int     font_size=12;
+int     font_size=11;
 int     font_face=Font.PLAIN;
 StringDict    config=new StringDict();
 
@@ -51,9 +52,10 @@ void saveConfig(String configName)
 
 void loadConfig(String configName)
 {
-  File file = new File(configName);
-  String path = file.getAbsolutePath();
-  println(path);
+  String path=configName;
+  //File file = new File(configName);
+  //path = file.getAbsolutePath();
+  //println(path);
   String[] data=loadStrings(path);
   for(int i=0;i<data.length;i++)
   {
