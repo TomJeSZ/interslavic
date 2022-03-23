@@ -22,7 +22,7 @@ public void setup()
   frameRate(10);
   createGUI();
   
-  loadConfig("../config.txt");
+  loadConfig("config.txt");
   configToFont();
   
   surface.setTitle("Latinka v.041 - MULTI");
@@ -43,7 +43,7 @@ public void setup()
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);                       
    
-  txaArea.setPromptText("Use Ctrl+V to paste some Interslavic cyrylic text here");
+  txaArea.setPromptText(configLog+"\nUse Ctrl+V to paste some Interslavic cyrylic text here");
   txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
                          "Please send comments and suggestions to: https://t.me/fasadaOSG ");
   

@@ -1,3 +1,7 @@
+# Template for config.txt file
+#===============================
+#1. Copy to a sister file named 'config.txt'. 
+#2. Leave only the data that is compatible with your system.
 font_index:139
 font_name:DialogInput.plain
 font_size:12
