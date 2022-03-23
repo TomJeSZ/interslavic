@@ -57,17 +57,18 @@ void setup()
 {                                                                                                                        
   println("=======================================================");
   println("   Font selector, created by FASADA OSG PL\n   https://github.com/TomJeSZ/interslavic/");
-  size(500,500);
+  size(500,640);
   createGUI();
   
   loadtextToView();
   textarea1.setText(textToView);
   
   println("\nData from config file:\n");
-  loadConfig("../config.txt");
+  loadConfig("config.txt");
   println();
   
   configToFont();//Load font data from config dictionary
+  
   fontList = PFont.list();
   dropListOfFonts.setItems(fontList,font_index);
   dropListOfFonts.setSelected(font_index);
@@ -79,7 +80,7 @@ void setup()
     println("Loaded configuration seems to be valid");
     fsize_slider.setValue(font_size);
     
-    double realsize=my_font_changed().getSize();
+    double realsize=example_font_changed().getSize();
     if(realsize!=font_size)//because of size
       println("But size is",realsize);
   }
@@ -93,6 +94,9 @@ void draw()
 {
   //EMPTY ? BUT MUST BE!!!
   background(0,200,200);
+  textAlign(LEFT,BOTTOM);
+  text("2022©Fasada Open Software Group (https://github.com/TomJeSZ/interslavic/)",
+  15,height-2);
 }
 
 /*

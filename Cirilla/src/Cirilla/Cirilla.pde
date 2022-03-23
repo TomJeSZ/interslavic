@@ -7,31 +7,33 @@ Prototypowa aplikacja do zamiany liter
 import g4p_controls.*;
 
 PFont myFont; 
-GTextArea txaArea,txbArea;
+GTextArea textarea1,textarea2;
 
 public void setup(){
   println("==========================================================");
-  println("Transliterator 'Cirilla' v.031, created by FASADA OSG PL");
+  println("Transliterator 'Cirilla' v.032, created by FASADA OSG PL");
 //println("==========================================================");
-  size(640, 640);//, P2D);
+  size(640, 800);//, P2D);
   frameRate(10);
   //createGUI();
-  loadConfig("../config.txt");
-  configToFont();
   
-  surface.setTitle("Cirilla v.031 - INTERSLAVIC extPL");
-  txaArea = new GTextArea(this, 10, 5, 640,215, 
+  surface.setTitle("Cirilla v.032 - INTERSLAVIC extPL");
+  textarea1 = new GTextArea(this, 10, 5, 640,215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
                           
-  txbArea = new GTextArea(this, 10,210,640,415, 
+  textarea2 = new GTextArea(this, 10,210,640,590, 
                           G4P.SCROLLBARS_BOTH | 
-                          G4P.SCROLLBARS_AUTOHIDE);                       
-            
-  txaArea.setPromptText("Use Ctrl+V to paste here some Interslavic text in latin alphabet");
-  txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
-                         "Please send comments and suggestions to: https://t.me/fasadaOSG ");  txaArea.setOpaque(false);
-  txbArea.setOpaque(false);
+                          G4P.SCROLLBARS_AUTOHIDE);
+  
+  loadConfig("config.txt");
+  configToFont();         
+  my_font_changed();
+  
+  textarea1.setPromptText(configMsgs+"\nUse Ctrl+V to paste here some Interslavic text in latin alphabet");
+  textarea2.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
+                         "Please send comments and suggestions to: https://t.me/fasadaOSG ");  textarea1.setOpaque(false);
+  textarea2.setOpaque(false);
 }
 
 void handleTextEvents(GEditableTextControl textcontrol, GEvent event) 
@@ -45,7 +47,7 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
       //out=trScientificCyrLat(textcontrol.getText(),out);
       out=crInterlavic(textcontrol.getText(),out);
       //println("--> "+textcontrol.getText()+'\n'+out);
-      txbArea.setText(out);
+      textarea2.setText(out);
     }
     
     if(event==event.ENTERED)//Wklejanie zaraz po ENTER powoduje błąd!
@@ -62,7 +64,16 @@ void draw(){
   5,height-2);
 }
 
-
+Font my_font_changed()//example
+{
+  Font selectedFont=new Font(font_name,font_face,font_size);
+  //if(selectedFont.isValid())
+      textarea1.setFont(selectedFont);
+      textarea2.setFont(selectedFont);
+  //else
+  //    println("Failed creation of font:",font_name,font_face,font_size);
+  return selectedFont;
+}
  
 //class MyGTextArea extends GTextArea
 //{
@@ -74,5 +85,5 @@ void draw(){
 //}
 
 /**
-https://github.com/TomJeSZ/interslavic/tree/main/abc
+https://github.com/TomJeSZ/interslavic/
 */

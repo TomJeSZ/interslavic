@@ -9,24 +9,21 @@ Authors: Tomasz Jerzy Szwed
 import g4p_controls.*;
 
 PFont     myFont; 
-GTextArea txaArea,txbArea;
+GTextArea textarea1,textarea2;
 GDropList mydList;
 GButton   button1;
 
 public void setup()
 {
   println("=========================================================");
-  println("Transliterator 'Latinka' v.041, created by FASADA OSG PL ");
+  println("Transliterator 'Latinka' v.042, created by FASADA OSG PL ");
   println("=========================================================");
-  size(640, 640);//, P2D);
+  size(640, 800);//, P2D);
   frameRate(10);
   createGUI();
   
-  loadConfig("config.txt");
-  configToFont();
-  
-  surface.setTitle("Latinka v.041 - MULTI");
-  txaArea = new GTextArea(this, 10, 5, 640, 215, 
+  surface.setTitle("Latinka v.042 - MULTI");
+  textarea1 = new GTextArea(this, 10, 5, 640, 215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);
     
@@ -37,18 +34,22 @@ public void setup()
                  52 // buttonWidth
                  );                      
                  
-  button1= new GButton(this, 575, 210, 52, 15, "xxxxx");
+  button1= new GButton(this, 575, 210, 52, 15, "clean!");
   
-  txbArea = new GTextArea(this, 10,230,640,415, 
+  textarea2 = new GTextArea(this, 10,230,640,575, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);                       
-   
-  txaArea.setPromptText(configLog+"\nUse Ctrl+V to paste some Interslavic cyrylic text here");
-  txbArea.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
+  
+  loadConfig("config.txt");
+  configToFont();
+  my_font_changed();
+    
+  textarea1.setPromptText(configMsgs+"\nUse Ctrl+V to paste some Interslavic cyrylic text here");
+  textarea2.setPromptText("Select text (using mouse or Ctrl+A) and then use Ctrl+C to copy from here.\n"+
                          "Please send comments and suggestions to: https://t.me/fasadaOSG ");
   
-  txaArea.setOpaque(false);
-  txbArea.setOpaque(false);
+  textarea1.setOpaque(false);
+  textarea2.setOpaque(false);
   mydList.setOpaque(false);
   button1.setOpaque(false);
   
@@ -58,22 +59,20 @@ public void setup()
   mydList.addItem("Glagolitic");
   mydList.addItem("Cyrylic scientific");
   mydList.addItem("Ukrainian->Polish (exp.)");
-  
-  my_font_changed();
 }
 
 void my_font_changed()
 {
   //println(font_name,font_face,font_size);
   Font selectedFont=new Font(font_name,font_face,font_size);
-  txaArea.setFont(selectedFont);
-  txbArea.setFont(selectedFont);
+  textarea1.setFont(selectedFont);
+  textarea2.setFont(selectedFont);
 }
 
 void handleTextEvents(GEditableTextControl textcontrol, GEvent event) 
 {
     //print("TextEvent:",event);
-    if( textcontrol==txaArea
+    if( textcontrol==textarea1
     && event==GEvent.CHANGED)
     { //Wykonaj transliteracje
       String out=textcontrol.getText()+"\n===>\n";
@@ -87,7 +86,7 @@ void handleTextEvents(GEditableTextControl textcontrol, GEvent event)
       default: out="UNKNOWN TRANSLITERATION"; break;
       }
       //println("--> "+textcontrol.getText()+'\n'+out);
-      txbArea.setText(out);
+      textarea2.setText(out);
     }
     
     if(event==GEvent.ENTERED)//Wklejanie zaraz po ENTER powoduje błąd!
@@ -103,7 +102,7 @@ void handleButtonEvents(GButton button, GEvent event)
    {
        println("CLEANING");
        //button1.setEnabled(false);
-       txaArea.setText("");
+       textarea1.setText("");
    }
  }
 
@@ -113,10 +112,10 @@ void handleDropListEvents(GDropList list, GEvent event)
   {
     //println("LIST");
     println(list.getSelectedIndex(),list.getSelectedText());
-    txaArea.setPromptText("Use Ctrl+V to paste some "+list.getSelectedText()+" text here");
+    textarea1.setPromptText("Use Ctrl+V to paste some "+list.getSelectedText()+" text here");
     //String tmp=txaArea.getText()+".";
     //txaArea.setText(tmp);
-    txaArea.setText("");
+    textarea1.setText("");
   }
 }
 

@@ -1,4 +1,4 @@
-font_index:40
-font_name:Dialog.bold
-font_size:14
-font_face:1
+font_index:45
+font_name:DialogInput.bolditalic
+font_size:13
+font_face:3
