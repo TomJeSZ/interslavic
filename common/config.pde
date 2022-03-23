@@ -2,7 +2,7 @@
 /** Font configuration & possible others
 2022 (c) Fasada Open Software Group PL
 */
-import java.io.File;
+import java.io.*;
 import java.awt.Font;
 
 /// Defaults of configuration.
@@ -49,6 +49,7 @@ void loadConfig(String configName)
 
 void saveConfig(String configName)
 {
+  println("Saving configuration...");
   String[] keys=config.keyArray();
   String[] vals=config.valueArray();
   for(int i=0;i<keys.length;i++)
@@ -61,7 +62,16 @@ void saveConfig(String configName)
   //File file = new File(configName);
   //path = file.getAbsolutePath();
   //println(path);
-  saveStrings(path,keys);
+  try {
+    saveStrings(path,keys);
+  } catch(Exception e)
+  {
+    configMsgs=e.getMessage();
+    println("Exception!",configMsgs);
+    return;
+  }
+  File file = new File(configName);
+  configMsgs="Configuration saved into "+file.getAbsolutePath();
 }
 
 void fontToConfig()

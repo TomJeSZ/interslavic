@@ -18,7 +18,8 @@ public void buttonOK_click1(GButton source, GEvent event) { //_CODE_:buttonOK:29
   //println("buttonOK - GButton >> GEvent." + event + " @ " + millis());
   fontToConfig();
   saveConfig("data/config.txt");
-  println();
+  println(configMsgs);
+  textarea1.setText(configMsgs+"\n...\n"+textToView);
 } //_CODE_:buttonOK:293005:
 
 public void dropList_click1(GDropList source, GEvent event) { //_CODE_:dropListOfFonts:668570:
@@ -46,7 +47,6 @@ public void fsize_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_
   font_size=fsize_slider.getValueI();
   example_font_changed();
 } //_CODE_:fsize_slider:516832:
-
 
 
 // Create all the GUI controls. 
