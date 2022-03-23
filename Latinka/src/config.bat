@@ -1,9 +1,11 @@
 @echo off
+echo Interslavic Tools configuration
+echo ===============================
 echo USERPROFILE= %USERPROFILE% 
 SET icon=%cd%\interslavicApps\interslavic.ico
 SET appl1=%cd%\interslavicApps\Latinka.exe
 SET appl2=%cd%\interslavicApps\Cirilla.exe
-SET appl3=%cd%\interslavicApps\Cirilla.exe
+SET appl3=%cd%\interslavicApps\fontSelect.exe
 SET wdir=%cd%\interslavicApps\
 echo ====================================================================
 echo "%icon%"
