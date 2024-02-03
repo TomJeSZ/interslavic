@@ -1,10 +1,10 @@
-/**
-2021 (c) Fasada Open Software Group PL
-Channel: https://t.me/fasadaOSG
-See:
-http://tutorial.neoslavonic.org/lessons/1/glagolica.gif
-https://pl.wikipedia.org/wiki/G%C5%82agolica
-*/
+/** @brief FROM GLAGOLITIC FUNCTION
+ * 2021 (c) Fasada Open Software Group PL
+ * Channel: https://t.me/fasadaOSG
+ * See:
+ *   http://tutorial.neoslavonic.org/lessons/1/glagolica.gif
+ *   https://pl.wikipedia.org/wiki/G%C5%82agolica
+ */
 
 String trGlagolitic(String inp,String out)
 //Standard transliteration from latin interslavic to cyrylic interslavic with some extensions

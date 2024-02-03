@@ -1,15 +1,16 @@
 /**
-/** Font configuration & possible others
-2022 (c) Fasada Open Software Group PL
-*/
+ * Font configuration & possible others 
+ * 2022 (c) Fasada Open Software Group PL
+ * @date 2024-02-03 (last modification)
+ */
 import java.io.*;
 import java.awt.Font;
 
 /// Defaults of configuration.
-int     font_index=0;        ///< Default index of font
-String  font_name="DialogInput.bold";///< Default name of font
-int     font_size=12;        ///< Default size of font
-int     font_face=Font.PLAIN;///< Default face of font
+int     font_index=0;         ///< Default index of font
+String  font_name="DialogInput.bold"; ///< Default name of font
+int     font_size=12;         ///< Default size of font
+int     font_face=Font.PLAIN; ///< Default face of font
 
 /// Config dictionary.
 /// Text dictionary representing the configuration 

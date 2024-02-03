@@ -1,4 +1,4 @@
-/**
+/** @brief TEMPLATE TRANSLITERATION FUNCTION
 2021 (c) Fasada Open Software Group PL
 channel: https://t.me/fasadaOSG
 

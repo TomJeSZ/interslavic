@@ -1,4 +1,4 @@
-/**
+/** @brief FROM UKRAINIAN FUNCTION
 2021 (c) Fasada Open Software Group PL
 Channel: https://t.me/fasadaOSG
 See:

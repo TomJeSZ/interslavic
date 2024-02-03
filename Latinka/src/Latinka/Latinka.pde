@@ -1,11 +1,11 @@
-/**
-Aplikacja do zamiany liter (transliteracji) z cyrylicy i głagolicy na latinkę
-2022 (c) Fasada Open Software Group PL
-https://t.me/fasadaOSG
-Authors: Tomasz Jerzy Szwed 
-       & Wojciech Tomasz Borkowski
-*/
-
+/** @file
+ * Aplikacja do zamiany liter (transliteracji) z cyrylicy i głagolicy na latinkę
+ * 2022 (c) Fasada Open Software Group PL
+ * https://t.me/fasadaOSG
+ * @authors: Tomasz Jerzy Szwed 
+ *          & Wojciech Tomasz Borkowski
+ * @date 2024-02-03 (last modification)
+ */
 import g4p_controls.*;
 
 PFont     myFont; 
@@ -16,13 +16,13 @@ GButton   button1;
 public void setup()
 {
   println("=========================================================");
-  println("Transliterator 'Latinka' v.042, created by FASADA OSG PL ");
+  println("Transliterator 'Latinka' v.043, created by FASADA OSG PL ");
   println("=========================================================");
   size(640, 800);//, P2D);
   frameRate(10);
   createGUI();
   
-  surface.setTitle("Latinka v.042 - MULTI");
+  surface.setTitle("Latinka v.043 - MULTI");
   textarea1 = new GTextArea(this, 10, 5, 640, 215, 
                           G4P.SCROLLBARS_BOTH | 
                           G4P.SCROLLBARS_AUTOHIDE);

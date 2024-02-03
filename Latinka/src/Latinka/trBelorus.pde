@@ -1,9 +1,11 @@
-/**
-2021 (c) Fasada Open Software Group PL
-Channel: https://t.me/fasadaOSG
-See:
-https://en.wikipedia.org/wiki/Belarusian_alphabet
-https://en.wikipedia.org/wiki/Romanization_of_Belarusian
+/** @brief FROM BELARUS FUNCTION
+ * @details
+ * 2021 (c) Fasada Open Software Group PL
+ * Channel: https://t.me/fasadaOSG
+ * See:
+ *   https://en.wikipedia.org/wiki/Belarusian_alphabet
+ *   https://en.wikipedia.org/wiki/Romanization_of_Belarusian
+ * @date 2024-02-03 (last modification)
 */
 
 String trBelorus(String inp,String out)
