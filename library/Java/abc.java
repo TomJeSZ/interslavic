@@ -1,22 +1,24 @@
 /**
-Prototype class for cyrylic<->latin transliteration 
+Prototype class for cyrylic<->latin transliteration.
+
 2021 (c) Fasada Open Software Group PL
 
 Version 0.31;
 
-crInterlavic - standard transliteration from latin interslavic to cyrylic interslavic with some extensions
-trBelorus - transliteration from Belorusian Cyrillic into National 2007 standard
-trInterlavic - standard transliteration from cirilic interslavic to basic latin interslavic with some extensions
-trScientific - transliteration from  Cyrillic ISO 9 (extended for historical letters)
-trUkrainian - transliteration from  Cyrillic into GOST 1986, but 'И' --> 'Y'
+Functions:
+ * crInterlavic - standard transliteration from latin interslavic to cyrylic interslavic with some extensions
+ * trBelorus - transliteration from Belorusian Cyrillic into National 2007 standard
+ * trInterlavic - standard transliteration from cirilic interslavic to basic latin interslavic with some extensions
+ * trScientific - transliteration from  Cyrillic ISO 9 (extended for historical letters)
+ * trUkrainian - transliteration from  Cyrillic into GOST 1986, but 'И' --> 'Y'
 
-https://github.com/TomJeSZ/interslavic/
+--> https://github.com/TomJeSZ/interslavic/
 */
 
 public class abc {
 
+/// Standard transliteration from latin interslavic to cyrylic interslavic with some extensions.
 public String crInterlavic(String inp,String out)
-//Standard transliteration from latin interslavic to cyrylic interslavic with some extensions
 {
   int big=0;
     
@@ -96,9 +98,9 @@ public String crInterlavic(String inp,String out)
   
   return out+"\n[Interslavic std.ext.]";
 }
-
+  
+/// Transliteration from Cyrillic into National 2007 standard.
 public String trBelorus(String inp,String out)
-//transliteration from Cyrillic into National 2007 standard
 { 
   int big=0;
 
@@ -219,8 +221,8 @@ public String trBelorus(String inp,String out)
   return out+"\n[National 2007]";
 }
 
+/// Standard transliteration from cirilic interslavic to basic latin interslavic with some extensions.
 public String trInterlavic(String inp,String out)
-//Standard transliteration from cirilic interslavic to basic latin interslavic with some extensions
 {
   int big=0;
     
@@ -316,8 +318,8 @@ public String trInterlavic(String inp,String out)
   return out+"\n[Interslavic std.ext.]";
 }
 
+/// Transliteration from  Cyrillic ISO 9 (extended for historical letters)
 public String trScientific(String inp,String out)
-//transliteration from  Cyrillic ISO 9 (extended for historical letters)
 {
   int big=0;
   
@@ -403,8 +405,8 @@ public String trScientific(String inp,String out)
   return out+"\n[ISO9 ext.]";
 }
 
+/// Transliteration from  Cyrillic into GOST 1986, but 'И' --> 'Y'  
 public String trUkrainian(String inp,String out)
-//transliteration from  Cyrillic into GOST 1986, but 'И' --> 'Y'
 {
   int big=0;
   
@@ -459,7 +461,7 @@ public String trUkrainian(String inp,String out)
 
 } //END OF CLASS
 /**
-2021 (c) Fasada Open Software Group PL
+2021-2024 (c) Fasada Open Software Group PL
 
 https://pl.wikibooks.org/wiki/Unicode/Alfabet_%C5%82aci%C5%84ski/%C5%81aci%C5%84ski_rozszerzony_A
 
